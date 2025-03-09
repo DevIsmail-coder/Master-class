@@ -1,0 +1,17 @@
+.Dashboardbody{
+    width: 100%;
+    height: 100vh;
+    background-color: blue;
+}
+
+.Dashboardheader {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    gap: 10px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #009146;
+}

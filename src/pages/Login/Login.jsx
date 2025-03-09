@@ -4,17 +4,13 @@ import './Login.css'
 import { useNavigate } from 'react-router-dom'
 import { FaArrowAltCircleLeft } from "react-icons/fa";
 import axios from 'axios';
-import checkOnline from '../../hooks/useCheckData';
-import toast from 'react-hot-toast';
 
 
 const url = "https://free-todo-api.vercel.app"
 
 const Login = () => {
-    const isOnline = checkOnline()
-
 const navigate = useNavigate()
-
+const [userError, setUserError] = useState({})
 const [userData, setUserData] = useState({
     email: "",
     password: "",
@@ -23,25 +19,47 @@ const [userData, setUserData] = useState({
 const handleChange = (e) => {
     const { name, value } = e.target
     setUserData({ ...userData, [name]: value })
+
+    if(userError[name]){
+        setUserError({...userError, [name]: ""})
+    }
 }
-    
+const validation = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email)
+}
+     
+ const handleError = () => {
+    let error = {}
+    if(userData.email.trim() === "" || !validation(userData.email)){
+        error.email = "please enter a valid email"
+    }
+    if(userData.password.trim() === ""){
+       error.password = "please enter a correct password"
+    }
+    if(Object.keys(error).length > 0){
+        setUserError(error)
+        return false
+    }
+    else{
+        return true
+    }
+ }
 
 const handleSubmit = async (e) => {
     e.preventDefault()
+    if(!handleError()) return
     try {
-        const res = await  axios.post(`${url}/user/log-in`,  userData)
+        const res = await axios.post(`${url}/user/log-in`,  userData)
         console.log(res);
         
     } catch (error) {
         console.log(error);
     }
-    
     }
-
 
   return (
     <div className='Loginbody'>
-         {/* {!isOnline && toast.error("sorry you are offline")} */}
     <form className='Loginmain' onSubmit={handleSubmit} >
         <article className='Loginheader'>
             <FaArrowAltCircleLeft className='loginicon' />
@@ -53,7 +71,7 @@ const handleSubmit = async (e) => {
                 value={userData.email}
                 onChange={handleChange}
             />
-            {/* <p>{errorMess.email}</p> */}
+            <p>{userError.email}</p>
         </article>
         <article className='loginwrap'>
             <input type="password" placeholder='password'
@@ -61,7 +79,7 @@ const handleSubmit = async (e) => {
                 value={userData.password}
                 onChange={handleChange}
             />
-            {/* <p>{errorMess.password}</p> */}
+            <p>{userError.password}</p>
         </article>
         <article className='Signupcheck'>Don’t have an account?  <span onClick={() => navigate("/signup")}>Sign up</span></article>
         <button className='loginbut' type='submit' >
