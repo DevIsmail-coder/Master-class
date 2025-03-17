@@ -9,7 +9,9 @@ import axios from 'axios';
 const url = "https://free-todo-api.vercel.app"
 
 const Login = () => {
+    
 const navigate = useNavigate()
+const [loading, setLoading] = useState(false)
 const [userError, setUserError] = useState({})
 const [userData, setUserData] = useState({
     email: "",
@@ -51,10 +53,12 @@ const handleSubmit = async (e) => {
     if(!handleError()) return
     try {
         const res = await axios.post(`${url}/user/log-in`,  userData)
+        setLoading(true)
         console.log(res);
         
     } catch (error) {
         console.log(error);
+        setLoading(false)
     }
     }
 
@@ -83,7 +87,7 @@ const handleSubmit = async (e) => {
         </article>
         <article className='Signupcheck'>Don’t have an account?  <span onClick={() => navigate("/signup")}>Sign up</span></article>
         <button className='loginbut' type='submit' >
-            log in</button>
+            {loading ? "loading..." : "login"} </button>
     </form>
 </div>
   )

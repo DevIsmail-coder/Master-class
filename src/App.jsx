@@ -8,6 +8,7 @@ import VerifyPage from './pages/VerifyPage/VerifyPage'
 import toast, { Toaster } from 'react-hot-toast'
 import Dashboard from './pages/Dashboard/Dashboard'
 import Trash from './pages/Trash/Trash'
+import Model from './pages/model/Model'
 
 
 
@@ -26,7 +27,8 @@ function App() {
           <Route path='/signup' element={<Signup />} />
           <Route path='/user/verify-email' element={<VerifyPage />} />
           <Route path='/dashboard' element={<Dashboard />} />
-          <Route path='/Trash:user' element={<Trash />} />
+          <Route path='/Trash' element={<Trash />} />
+          <Route path='/model' element={<Model/>} />
         </Routes>
         <Toaster />
       </BrowserRouter>

@@ -1,0 +1,235 @@
+.Modelbody{
+    width: 100%;
+    height: 100vh;
+    background-color: rebeccapurple
+    ;
+}
+
+
+
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-color: #FFFFFF;
+}
+
+.login-box {
+    background-color: #FFFFFF;
+    padding: 30px;
+    height: 87vh;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    text-align: center;
+    font-family: sans-serif;
+    width: 55%;
+
+    & h2{
+        font-size: 27px;
+    }
+
+    & p{
+        font-size: 14px;
+        color: #301A22;
+    }
+}
+
+.Loginwrap{
+    width: 92%;
+    height: 275px;
+    /* background-color: yellow; */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 23px;
+}
+
+.Loginmain{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.loginlabel{
+font-size: 16px;
+font-weight: 450;
+}
+
+
+.login-input {
+    width: 100%;
+    padding: 10px;
+    height: 55px;
+    
+}
+
+.login-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* background-color: blue; */
+
+}
+
+.forgot-password {
+    color: red;
+    text-decoration: none;
+}
+
+.signup-link {
+    color: red;
+    text-decoration: none;
+}
+
+.login-btn{
+    width: 92%;
+    /* background-color: blue; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    /* margin: 10px; */
+    margin-top: 10%;
+}
+
+.loginbtnspan{
+    width: 250px;
+    display: flex;
+    gap: 10px;
+    height: 60px;
+    align-items: center;
+    /* background-color: blue; */
+
+    & p{
+        color: #FF2020;
+    }
+}
+
+.login-button {
+    width: 22%;
+    padding: 10px;
+    background-color: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    height: 100%;
+}
+
+
+
+sign up 
+
+
+.signup-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-color: #FFFFFF;
+}
+
+.signup-box {
+    background-color: #FFFFFF;
+    padding: 30px;
+    height: 100vh;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    text-align: center;
+    font-family: sans-serif;
+    width: 55%;
+
+    & h2{
+        font-size: 27px;
+    }
+
+    & p{
+        font-size: 14px;
+        color: #301A22;
+    }
+}
+
+.signupwrap{
+    width: 92%;
+    height: 500px;
+    /* background-color: yellow; */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 23px;
+}
+
+.signupmain{
+    display: flex;
+    flex-direction: column;
+    /* background-color: green; */
+    gap: 10px;
+}
+.signuplabel{
+font-size: 16px;
+font-weight: 450;
+}
+
+
+.signup-input {
+    width: 100%;
+    padding: 10px;
+    height: 55px;
+    
+}
+
+.forgot-password {
+    color: red;
+    text-decoration: none;
+}
+
+.signup-link {
+    color: red;
+    text-decoration: none;
+}
+
+.signup-btn{
+    width: 92%;
+    /* background-color: blue; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    /* margin: 10px; */
+    margin-top: 10%;
+}
+
+.signupbtnspan{
+    width: 250px;
+    display: flex;
+    gap: 10px;
+    height: 60px;
+    align-items: center;
+    /* background-color: blue; */
+
+    & p{
+        color: #FF2020;
+    }
+}
+
+.signup-button {
+    width: 22%;
+    padding: 10px;
+    background-color: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    height: 100%;
+}
